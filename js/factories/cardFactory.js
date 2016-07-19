@@ -15,12 +15,23 @@ angular.module('app').factory('cardFactory', function () {
         {
           id: 3,
           description: 'Learn AngularJS',
-          list_id: 3
+          list_id: 1
         }
       ];
 
       service.getCards = function (list) {
           return _.filter(cards, { list_id:list.id});
+      }
+
+      service.createCard = function (list, cardDescription) {
+          cards.push({
+              id: _.uniqueId('card_'),
+              description: cardDescription,
+              list_id: list.id
+          });
+          console.log('description: cardDescription', cardDescription);
+          console.log('  list_id: list.id', list.id);
+          console.log("id: _.uniqueId('card_')", _.uniqueId('card_'));
       }
 
       return service;

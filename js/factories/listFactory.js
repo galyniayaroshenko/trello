@@ -25,6 +25,10 @@ angular.module('app').factory('listFactory', function () {
             id: _.uniqueId('list_'),
             listName: listName
         });
+    };
+
+    service.removeList = function (list) {
+        _.pull(lists, list);
     }
 
     return service;

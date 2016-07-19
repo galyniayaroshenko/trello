@@ -34,5 +34,9 @@ angular.module('app').factory('cardFactory', function () {
           console.log("id: _.uniqueId('card_')", _.uniqueId('card_'));
       }
 
+      service.deleteCard = function (card) {
+            _.pull(cards, card);
+      }
+
       return service;
 });

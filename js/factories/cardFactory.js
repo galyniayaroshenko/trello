@@ -35,7 +35,12 @@ angular.module('app').factory('cardFactory', function () {
       }
 
       service.deleteCard = function (card) {
-            _.pull(cards, card);
+          _.pull(cards, card);
+      }
+
+      service.updateCard = function (updatingCard) {
+          var card = _.findWhere(cards, { id: updatingCard.id });
+          card.description = updatingCard.description;
       }
 
       return service;

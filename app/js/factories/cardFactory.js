@@ -42,6 +42,7 @@ angular.module('app').factory('cardFactory', function () {
           var card = _.find(cards, { id: updatingCard.id });
           console.log('card', card);
           card.description = updatingCard.description;
+          card.list_id = updatingCard.list_id;
       }
 
       return service;

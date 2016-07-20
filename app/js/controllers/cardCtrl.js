@@ -11,9 +11,10 @@ angular.module('app').controller('cardCtrl', function (cardFactory) {
     this.editCard = function (card) {
         this.isEditing = true;
         this.editingCard = angular.copy(card);
+        console.log("card!!!", card);
     };
 
-    this.updateCard = function (card) {
+    this.updateCard = function () {
         cardFactory.updateCard(this.editingCard);
         this.editingCard = null;
         this.isEditing = false;
